@@ -1,0 +1,139 @@
+/* Container for the card layout */
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: #f0f4f8; /* Light pastel background for the page */
+  }
+  
+  /* Card container */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f9f9; /* Light pastel background for the card */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    max-width: 350px; /* Maximum width for responsiveness */
+    animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
+    box-sizing: border-box; /* Ensures padding and border are included in width/height */
+    cursor: pointer;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 1.8rem;
+    color: #6c5b7b; /* Pastel purple */
+    margin-bottom: 10px;
+    animation: slideInFromTop 0.5s ease-in-out;
+  }
+  
+  /* Brewery styling */
+  .brewery {
+    font-size: 1.2rem;
+    color: #f4a261; /* Pastel orange */
+    margin-bottom: 8px;
+    animation: slideInFromLeft 0.5s ease-in-out;
+  }
+  
+  /* ABV styling */
+  .abv {
+    font-size: 1rem;
+    color: #a8dadc; /* Pastel teal */
+    margin-bottom: 8px;
+    animation: slideInFromRight 0.5s ease-in-out;
+  }
+  
+  /* Description styling */
+  .description {
+    font-size: 0.9rem;
+    color: #c2c2c2; /* Light gray */
+    text-align: center;
+    margin-bottom: 8px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* IBU styling */
+  .ibu {
+    font-size: 1rem;
+    color: #ff6f61; /* Pastel coral */
+    margin-bottom: 8px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Type styling */
+  .type {
+    font-size: 1rem;
+    color: #d3c6e3; /* Pastel lavender */
+    animation: slideInFromBottom 0.5s ease-in-out;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.95);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromBottom {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
