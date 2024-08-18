@@ -1,8 +1,5 @@
-.beerItem{
-    display: flex;
-}
-
-p{
-    margin: 10px;
-    padding: 10px;
+.beerCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between grid items */
 }

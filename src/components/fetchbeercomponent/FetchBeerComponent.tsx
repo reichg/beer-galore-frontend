@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 import BeerItem from "../../models/BeerItem";
 import BeerItemComponent from "../beeritemcomponent/BeerItemComponent";
+import User from "../../models/User";
+import styles from "./fetchbeer.module.css";
 
 function FetchBeer() {
   const [beerItems, setBeerItems] = useState<BeerItem[]>([]);
 
-  const URL = "http://localhost:8080/api/beer/search";
+  const URL = "http://localhost:8080/api/beer/search?size=50";
 
   // syntax for use effect (callback, list of dependencies)
   useEffect(() => {
     async function fetchBeers() {
       // const TOKEN = await getToken();
+      const user: User = JSON.parse(localStorage.getItem("user") || "{}");
+      console.log(user);
+
       // response from API
       const res = await fetch(`${URL}`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${user.token}`,
         },
       });
       //   get structure from the response (json)
@@ -26,9 +31,11 @@ function FetchBeer() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.beerCardContainer}>
       {beerItems.map((beerItem) => (
-        <BeerItemComponent beerItem={beerItem} />
+        <div key={beerItem.beerItemId}>
+          <BeerItemComponent beerItem={beerItem} />
+        </div>
       ))}
     </div>
   );

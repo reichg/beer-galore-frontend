@@ -1,60 +1,65 @@
 /* Card container */
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff; /* Light pastel background for the card */
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-    width: 100%;
-    max-width: 400px; /* Maximum width for responsiveness */
-    animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
-    box-sizing: border-box; /* Ensures padding and border are included in width/height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff; /* Light pastel background for the card */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 100%;
+  max-width: 400px; /* Maximum width for responsiveness */
+  animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
+  box-sizing: border-box; /* Ensures padding and border are included in width/height */
+}
+
+.beerItemContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between grid items */
+}
+
+/* Username styling */
+.username {
+  font-size: 2rem; /* Larger font size for prominence */
+  color: #6c5b7b; /* Pastel purple for attention */
+  font-weight: bold; /* Bold text for emphasis */
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling for individual items */
+.item {
+  font-size: 0.9rem; /* Smaller font size for less prominence */
+  color: #888; /* Subtle text color for other details */
+  margin-bottom: 6px;
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+}
+
+/* Additional styling for labels */
+.label {
+  font-weight: bold;
+  color: #333; /* Darker color for labels */
+  margin-right: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* Username styling */
-  .username {
-    font-size: 2rem; /* Larger font size for prominence */
-    color: #6c5b7b; /* Pastel purple for attention */
-    font-weight: bold; /* Bold text for emphasis */
-    margin-bottom: 15px;
-    animation: fadeIn 1s ease-in-out;
+  to {
+    opacity: 1;
   }
-  
-  /* Styling for individual items */
-  .item {
-    font-size: 0.9rem; /* Smaller font size for less prominence */
-    color: #888; /* Subtle text color for other details */
-    margin-bottom: 6px;
-    animation: fadeIn 1s ease-in-out;
-    text-align: center;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
   }
-  
-  /* Additional styling for labels */
-  .label {
-    font-weight: bold;
-    color: #333; /* Darker color for labels */
-    margin-right: 5px;
+  to {
+    transform: scale(1);
   }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scaleUp {
-    from {
-      transform: scale(0.95);
-    }
-    to {
-      transform: scale(1);
-    }
-  }
-  
+}

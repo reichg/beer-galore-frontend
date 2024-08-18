@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./LoginForm.module.css";
+import styles from "./loginform.module.css";
 import { useNavigate } from "react-router-dom";
 
 interface LoginFormProps {
@@ -31,8 +31,10 @@ function LoginForm({ setAuthenticated }: LoginFormProps) {
         throw new Error("Network response was not ok");
       }
 
-      const data = await response.text();
-      localStorage.setItem("token", data);
+      const data = await response.json();
+      console.log(data);
+
+      localStorage.setItem("user", JSON.stringify(data));
       setAuthenticated(true);
 
       navigate("/fetchBeer");

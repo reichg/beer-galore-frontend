@@ -3,7 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import FetchBeerComponent from "./components/fetchbeercomponent/FetchBeerComponent";
 import NavbarComponent from "./components/navbar/NavbarComponent";
-import HomeComponent from "./components/homecomponent/HomeComponent";
+import LandingPageComponent from "./components/landingpagecomponent/LandingPageComponent";
 import ProfileComponent from "./components/profilecomponent/ProfileComponent";
 import { useState } from "react";
 import RegistrationComponent from "./components/registrationcomponent/RegistrationComponent";
@@ -17,7 +17,7 @@ function App() {
         setAuthenticated={setAuthenticated}
       />
       <Routes>
-        <Route path="/" element={<HomeComponent />} />
+        <Route path="/" element={<LandingPageComponent />} />
         <Route path="/register" element={<RegistrationComponent />} />
         <Route
           path="/login"

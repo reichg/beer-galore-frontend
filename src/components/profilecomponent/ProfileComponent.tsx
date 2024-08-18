@@ -2,17 +2,20 @@ import { useEffect, useState } from "react";
 import UserProfile from "../../models/UserProfile";
 import BeerItemComponent from "../beeritemcomponent/BeerItemComponent";
 import styles from "./profile.module.css";
+import User from "../../models/User";
 
-const URL = "http://localhost:8080/api/user/6/home";
 function ProfileComponent() {
   const [userProfile, setUserProfile] = useState<UserProfile>();
   useEffect(() => {
     async function fetchUserProfile() {
       // const TOKEN = await getToken();
+
+      const user: User = await JSON.parse(localStorage.getItem("user") || "{}");
+      const URL = `http://localhost:8080/api/user/${user.userId}/home`;
       // response from API
       const res = await fetch(`${URL}`, {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${user.token}`,
         },
       });
       //   get structure from the response (json)
@@ -51,16 +54,22 @@ function ProfileComponent() {
           {userProfile?.userId}
         </div>
       </div>
-      <h3>Tried Beers: </h3>
-      {userProfile?.triedBeers ? (
-        userProfile?.triedBeers?.map((triedBeer) => (
-          <div key={triedBeer.beerItemId}>
-            <BeerItemComponent beerItem={triedBeer} />
-          </div>
-        ))
-      ) : (
-        <strong>You Need To try Some Beers.</strong>
-      )}
+      <div>
+        <div>
+          <h3>Tried Beers: </h3>
+        </div>
+        <div className={styles.beerItemContainer}>
+          {userProfile?.triedBeers? (
+            userProfile?.triedBeers?.content.map((triedBeer) => (
+              <div key={triedBeer.beerItemId}>
+                <BeerItemComponent beerItem={triedBeer} />
+              </div>
+            ))
+          ) : (
+            <strong>You Need To try Some Beers.</strong>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

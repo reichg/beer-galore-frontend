@@ -8,5 +8,6 @@ interface User {
   phone: string;
   age: number;
   roles: string[];
+  token: string;
 }
 export default User;

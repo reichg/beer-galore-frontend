@@ -1,0 +1,26 @@
+/* Container for the stars */
+.starContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: row-reverse; */
+}
+
+/* Basic star styling */
+.star {
+  font-size: 2rem; /* Size of the stars */
+  color: #ccc; /* Default star color (unfilled) */
+  cursor: pointer;
+  transition: color 0s ease; /* Smooth color transition */
+}
+
+/* Filled star styling */
+.filled {
+  color: #ffc107; /* Gold color for filled stars */
+}
+
+/* Hover effect to fill stars from the left */
+.star:hover,
+.star:hover ~ .star {
+  color: #ffc107; /* Gold color when hovered */
+}
