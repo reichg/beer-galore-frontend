@@ -1,5 +1,5 @@
 # Beer Galore Frontend
-This is the frontend to the [Beer Galore Backend](https://github.com/reichg/beer-galore) that I created in Java (Spring Boot).
+This is the frontend to the Java (Spring Boot) [Beer Galore Backend](https://github.com/reichg/beer-galore).
 
 This is a Typescript/React project that is made with Vite so it is very lightweight. All that is required is: 
 
