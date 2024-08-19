@@ -61,6 +61,7 @@ function RegistrationComponent() {
           name="userName"
           placeholder="username"
           onChange={handleChange}
+          required
         ></input>
         <input
           className={styles.input}
@@ -68,6 +69,7 @@ function RegistrationComponent() {
           name="password"
           placeholder="password"
           onChange={handleChange}
+          required
         ></input>
         <input
           className={styles.input}
@@ -75,6 +77,7 @@ function RegistrationComponent() {
           name="firstName"
           placeholder="first name"
           onChange={handleChange}
+          required
         ></input>
         <input
           className={styles.input}
@@ -82,13 +85,16 @@ function RegistrationComponent() {
           name="lastName"
           placeholder="last name"
           onChange={handleChange}
+          required
         ></input>
         <input
           className={styles.input}
-          type="text"
+          type="tel"
           name="phone"
           placeholder="phone"
+          pattern="[0-9]{10}"
           onChange={handleChange}
+          required
         ></input>
         <input
           className={styles.input}
@@ -96,13 +102,15 @@ function RegistrationComponent() {
           name="age"
           placeholder="age"
           onChange={handleChange}
+          required
         ></input>
         <input
           className={styles.input}
-          type="text"
+          type="email"
           name="email"
           placeholder="email"
           onChange={handleChange}
+          required
         ></input>
         <button type="submit" className={styles.submitButton}>
           Register

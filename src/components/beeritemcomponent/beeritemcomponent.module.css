@@ -1,6 +1,8 @@
 /* Card container */
 .card {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   background: #f9f9f9; /* Light pastel background for the card */
   border-radius: 10px;
@@ -8,7 +10,7 @@
   padding: 20px;
   margin: 10px;
   width: 400px;
-  height: 300px;
+  height: 400px;
   max-width: 350px; /* Maximum width for responsiveness */
   animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
   box-sizing: border-box; /* Ensures padding and border are included in width/height */
@@ -43,7 +45,7 @@
 .description {
   font-size: 0.9rem;
   color: #c2c2c2; /* Light gray */
-  text-align: center;
+  /* text-align: center; */
   margin-bottom: 8px;
   animation: fadeIn 1s ease-in-out;
 }
@@ -61,6 +63,20 @@
   font-size: 1rem;
   color: #d3c6e3; /* Pastel lavender */
   animation: slideInFromBottom 0.5s ease-in-out;
+}
+p {
+  /* outline-color: black; */
+  /* outline: auto; */
+}
+
+h3 {
+  /* outline: auto; */
+}
+
+.beerInformation {
+  /* outline: auto; */
+  padding: 10px;
+  text-align: left;
 }
 
 /* Animations */

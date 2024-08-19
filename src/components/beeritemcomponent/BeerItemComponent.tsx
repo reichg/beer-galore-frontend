@@ -2,7 +2,7 @@ import { useState } from "react";
 import BeerItem from "../../models/BeerItem";
 import User from "../../models/User";
 import styles from "./beeritemcomponent.module.css";
-import StarRating from "../starratingcomponent/StarRatingComponent";
+// import StarRating from "../starratingcomponent/StarRatingComponent";
 
 interface BeerItemComponentProps {
   beerItem: BeerItem;
@@ -14,12 +14,9 @@ function BeerItemComponent({ beerItem }: BeerItemComponentProps) {
   const [rating, setRating] = useState(0);
   const user: User = getUser();
 
-  // const closePopup = () => {
-  //   setIsPopupVisible(false);
+  // const handleRatingChange = (newRating: number) => {
+  //   setRating(newRating);
   // };
-  const handleRatingChange = (newRating: number) => {
-    setRating(newRating);
-  };
 
   const handleTryBeerClick = async () => {
     // Function to fetch data
@@ -61,7 +58,7 @@ function BeerItemComponent({ beerItem }: BeerItemComponentProps) {
       </div>
       <div className={styles.tryBeerButton}>
         <button onClick={handleTryBeerClick}>I tried This Beer</button>
-        <StarRating rating={rating} onRatingChange={handleRatingChange} />
+        {/* <StarRating rating={rating} onRatingChange={handleRatingChange} /> */}
       </div>
     </div>
   );

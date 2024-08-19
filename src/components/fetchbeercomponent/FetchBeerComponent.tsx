@@ -7,7 +7,7 @@ import styles from "./fetchbeer.module.css";
 function FetchBeer() {
   const [beerItems, setBeerItems] = useState<BeerItem[]>([]);
 
-  const URL = "http://localhost:8080/api/beer/search?size=50";
+  const URL = "http://localhost:8080/api/beer/search";
 
   // syntax for use effect (callback, list of dependencies)
   useEffect(() => {
@@ -17,7 +17,7 @@ function FetchBeer() {
       console.log(user);
 
       // response from API
-      const res = await fetch(`${URL}`, {
+      const res = await fetch(`${URL}?`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -31,12 +31,17 @@ function FetchBeer() {
   }, []);
 
   return (
-    <div className={styles.beerCardContainer}>
-      {beerItems.map((beerItem) => (
-        <div key={beerItem.beerItemId}>
-          <BeerItemComponent beerItem={beerItem} />
-        </div>
-      ))}
+    <div>
+      <div className={styles.beerCardContainer}>
+        {beerItems.map((beerItem) => (
+          <div key={beerItem.beerItemId}>
+            <BeerItemComponent beerItem={beerItem} />
+          </div>
+        ))}
+      </div>
+      <div>
+        {/* <PageComponent/> */}
+      </div>
     </div>
   );
 }

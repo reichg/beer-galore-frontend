@@ -7,6 +7,8 @@ interface StarRatingProps {
 
 function StarRating({ rating, onRatingChange }: StarRatingProps) {
   const handleStarClick = (index: number) => {
+    console.log(index);
+
     onRatingChange(index + 1); // Update rating when a star is clicked
   };
 

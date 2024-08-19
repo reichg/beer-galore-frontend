@@ -17,7 +17,7 @@ function App() {
         setAuthenticated={setAuthenticated}
       />
       <Routes>
-        <Route path="/" element={<LandingPageComponent />} />
+        <Route path="/" element={<LandingPageComponent authenticated={authenticated}/>} />
         <Route path="/register" element={<RegistrationComponent />} />
         <Route
           path="/login"

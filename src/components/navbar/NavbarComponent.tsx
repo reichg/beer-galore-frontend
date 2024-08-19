@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import styles from "./navbar.module.css";
 
 interface NavbarComponentProps {
   authenticated: boolean;
@@ -31,17 +32,48 @@ function NavbarComponent({
   const handleGoToBeers = () => {
     navigate("/fetchBeer");
   };
+  const handleLogin = () => {
+    navigate("/login");
+  };
   return (
-    <div>
-      <button onClick={handleLandingPage}>Home</button>
-      {!authenticated ? (
-        <button onClick={handleRegister}>Register</button>
-      ) : undefined}
-      {authenticated ? (
-        <button onClick={handleGoToProfile}>Go To Profile</button>
-      ) : undefined}
-      <button onClick={handleGoToBeers}>See Beers</button>
-      <button onClick={handleLogout}>Logout</button>
+    <div className={styles.navbar}>
+      <div className={styles.navbarLeftItems}>
+        <button className={styles.navButton} onClick={handleLandingPage}>
+          Home
+        </button>
+        {authenticated ? (
+          <button className={styles.navButton} onClick={handleGoToBeers}>
+            See Beers
+          </button>
+        ) : null}
+        {!authenticated ? (
+          <button className={styles.navButton} onClick={handleLogin}>
+            Login
+          </button>
+        ) : null}
+        {!authenticated ? (
+          <button className={styles.navButton} onClick={handleRegister}>
+            Register
+          </button>
+        ) : null}
+      </div>
+
+      <div className={styles.navbarRightItems}>
+        {authenticated ? (
+          <button className={styles.navButton} onClick={handleGoToProfile}>
+            Go To Profile
+          </button>
+        ) : null}
+
+        {authenticated ? (
+          <button
+            className={`${styles.navButton} ${styles.logoutButton}`}
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 }
