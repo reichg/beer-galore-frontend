@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css";
+import ButtonComponent from "../globalbuttons/ButtonComponent";
 
 interface NavbarComponentProps {
   authenticated: boolean;
@@ -35,43 +36,41 @@ function NavbarComponent({
   const handleLogin = () => {
     navigate("/login");
   };
+
+  const handleGoToAddBeer = () => {
+    navigate("/addBeer");
+  };
   return (
     <div className={styles.navbar}>
       <div className={styles.navbarLeftItems}>
-        <button className={styles.navButton} onClick={handleLandingPage}>
-          Home
-        </button>
+        <ButtonComponent onClickFunction={handleLandingPage} text="Home" />
         {authenticated ? (
-          <button className={styles.navButton} onClick={handleGoToBeers}>
-            See Beers
-          </button>
+          <ButtonComponent onClickFunction={handleGoToBeers} text="See Beers" />
+        ) : null}
+        {authenticated ? (
+          <ButtonComponent
+            onClickFunction={handleGoToAddBeer}
+            text="Add Beers"
+          />
         ) : null}
         {!authenticated ? (
-          <button className={styles.navButton} onClick={handleLogin}>
-            Login
-          </button>
+          <ButtonComponent onClickFunction={handleLogin} text="Login" />
         ) : null}
         {!authenticated ? (
-          <button className={styles.navButton} onClick={handleRegister}>
-            Register
-          </button>
+          <ButtonComponent onClickFunction={handleRegister} text={"Register"} />
         ) : null}
       </div>
 
       <div className={styles.navbarRightItems}>
         {authenticated ? (
-          <button className={styles.navButton} onClick={handleGoToProfile}>
-            Go To Profile
-          </button>
+          <ButtonComponent
+            onClickFunction={handleGoToProfile}
+            text="Go To Profile"
+          />
         ) : null}
 
         {authenticated ? (
-          <button
-            className={`${styles.navButton} ${styles.logoutButton}`}
-            onClick={handleLogout}
-          >
-            Logout
-          </button>
+          <ButtonComponent onClickFunction={handleLogout} text="Logout" />
         ) : null}
       </div>
     </div>

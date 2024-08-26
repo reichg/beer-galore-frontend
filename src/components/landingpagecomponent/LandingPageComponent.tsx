@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./landingpage.module.css";
+import ButtonComponent from "../globalbuttons/ButtonComponent";
 
 interface HomeComponentProps {
   authenticated: boolean;
@@ -7,7 +8,7 @@ interface HomeComponentProps {
 
 function HomeComponent({ authenticated }: HomeComponentProps) {
   const navigate = useNavigate();
-  const handleGoToLogin = () => {
+  const handleLogin = () => {
     navigate("/login");
   };
   const handleRegister = () => {
@@ -20,14 +21,10 @@ function HomeComponent({ authenticated }: HomeComponentProps) {
         <p className={styles.subtitle}>Start your Beer Journey</p>
         <div className={styles.buttonContainer}>
           {!authenticated ? (
-            <button className={styles.button} onClick={handleGoToLogin}>
-              Login
-            </button>
+            <ButtonComponent onClickFunction={handleLogin} text="Login" />
           ) : null}
           {!authenticated ? (
-            <button className={styles.button} onClick={handleRegister}>
-              Register
-            </button>
+            <ButtonComponent onClickFunction={handleRegister} text="Register" />
           ) : null}
         </div>
       </div>

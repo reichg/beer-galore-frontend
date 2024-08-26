@@ -2,47 +2,85 @@
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: #ffffff; /* Light pastel background for the card */
+  align-items: left;
+  background: #141414; /* Light pastel background for the card */
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 5px rgb(57, 57, 57);
   padding: 20px;
-  margin: 20px;
-  width: 100%;
-  max-width: 400px; /* Maximum width for responsiveness */
+  margin: 120px 20px;
   animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
   box-sizing: border-box; /* Ensures padding and border are included in width/height */
+  /* outline: auto; */
 }
 
 .beerItemContainer {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: 20px; /* Space between grid items */
+  justify-content: center;
+  gap: 20px; /* Space between grid items*/
+  margin: 10px;
+  padding: 10px;
 }
 
 /* Username styling */
 .username {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 10px;
   font-size: 2rem; /* Larger font size for prominence */
   color: #6c5b7b; /* Pastel purple for attention */
   font-weight: bold; /* Bold text for emphasis */
   margin-bottom: 15px;
   animation: fadeIn 1s ease-in-out;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* Styling for individual items */
 .item {
   font-size: 0.9rem; /* Smaller font size for less prominence */
-  color: #888; /* Subtle text color for other details */
+  color: #6c5b7b; /* Subtle text color for other details */
   margin-bottom: 6px;
   animation: fadeIn 1s ease-in-out;
-  text-align: center;
+  text-transform: uppercase;
 }
 
 /* Additional styling for labels */
 .label {
   font-weight: bold;
-  color: #333; /* Darker color for labels */
+  color: #696969; /* Darker color for labels */
   margin-right: 5px;
+}
+
+.triedBeersTitleContainer {
+  margin: 100px 0px;
+  text-align: center;
+}
+
+.triedBeersTitleText {
+  font-size: 2.5em;
+  padding: 10px;
+  /* text-decoration: underline; */
+  letter-spacing: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  color: #6c5b7b; 
+}
+
+.beerEmoji {
+  font-size: 3em;
+  margin: 0 20px;
+}
+
+.youNeedToTryBeerTextContainer {
+  text-align: center;
+}
+
+.youNeedToTryBeerText {
+  color: #6c5b7b;
+}
+
+.goTryBeersButton {
+  margin: 15px;
 }
 
 /* Animations */

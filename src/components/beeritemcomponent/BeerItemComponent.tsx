@@ -2,6 +2,7 @@ import { useState } from "react";
 import BeerItem from "../../models/BeerItem";
 import User from "../../models/User";
 import styles from "./beeritemcomponent.module.css";
+import ButtonComponent from "../globalbuttons/ButtonComponent";
 // import StarRating from "../starratingcomponent/StarRatingComponent";
 
 interface BeerItemComponentProps {
@@ -47,17 +48,20 @@ function BeerItemComponent({ beerItem }: BeerItemComponentProps) {
     }
   };
   return (
-    <div className={styles.card}>
+    <div className={styles.card} key={beerItem.beerItemId}>
       <div className={styles.beerInformation}>
         <h3 className={styles.title}>{beerItem.name}</h3>
         <p className={styles.brewery}>{beerItem.brewery}</p>
-        <p className={styles.abv}>ABV: {beerItem.abv}</p>
         <p className={styles.description}>{beerItem.description}</p>
+        <p className={styles.abv}>ABV: {beerItem.abv}</p>
         <p className={styles.ibu}>IBU: {beerItem.ibu}</p>
         <p className={styles.type}>Type: {beerItem.type}</p>
       </div>
       <div className={styles.tryBeerButton}>
-        <button onClick={handleTryBeerClick}>I tried This Beer</button>
+        <ButtonComponent
+          onClickFunction={handleTryBeerClick}
+          text="Tried This Beer"
+        />
         {/* <StarRating rating={rating} onRatingChange={handleRatingChange} /> */}
       </div>
     </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import User from "../../models/User";
 import { useNavigate } from "react-router-dom";
 import styles from "./registration.module.css";
+import ButtonComponent from "../globalbuttons/ButtonComponent";
 
 function RegistrationComponent() {
   const [user, setUser] = useState<User>();
@@ -55,19 +56,20 @@ function RegistrationComponent() {
   return (
     <div className={styles.formContainer}>
       <form className={styles.form} onSubmit={handleRegisterSubmit}>
+        <span className={styles.registerTitle}>Register</span>
         <input
           className={styles.input}
           type="text"
           name="userName"
-          placeholder="username"
+          placeholder="Username..."
           onChange={handleChange}
           required
         ></input>
         <input
           className={styles.input}
-          type="text"
+          type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password..."
           onChange={handleChange}
           required
         ></input>
@@ -75,7 +77,7 @@ function RegistrationComponent() {
           className={styles.input}
           type="text"
           name="firstName"
-          placeholder="first name"
+          placeholder="First Name..."
           onChange={handleChange}
           required
         ></input>
@@ -83,7 +85,7 @@ function RegistrationComponent() {
           className={styles.input}
           type="text"
           name="lastName"
-          placeholder="last name"
+          placeholder="Last Name..."
           onChange={handleChange}
           required
         ></input>
@@ -91,7 +93,7 @@ function RegistrationComponent() {
           className={styles.input}
           type="tel"
           name="phone"
-          placeholder="phone"
+          placeholder="Phone..."
           pattern="[0-9]{10}"
           onChange={handleChange}
           required
@@ -100,7 +102,7 @@ function RegistrationComponent() {
           className={styles.input}
           type="number"
           name="age"
-          placeholder="age"
+          placeholder="Age..."
           onChange={handleChange}
           required
         ></input>
@@ -108,13 +110,14 @@ function RegistrationComponent() {
           className={styles.input}
           type="email"
           name="email"
-          placeholder="email"
+          placeholder="Email..."
           onChange={handleChange}
           required
         ></input>
-        <button type="submit" className={styles.submitButton}>
-          Register
-        </button>
+        <div className={styles.registerButton}>
+        <ButtonComponent text="Register" type="submit"/>
+        </div>
+        
       </form>
     </div>
   );

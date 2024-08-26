@@ -3,9 +3,11 @@ import BeerItem from "../../models/BeerItem";
 import BeerItemComponent from "../beeritemcomponent/BeerItemComponent";
 import User from "../../models/User";
 import styles from "./fetchbeer.module.css";
+import PageComponent from "../pagecomponent/PageComponent";
 
 function FetchBeer() {
   const [beerItems, setBeerItems] = useState<BeerItem[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const URL = "http://localhost:8080/api/beer/search";
 
@@ -26,10 +28,14 @@ function FetchBeer() {
       const data = await res.json();
       console.log(data);
       setBeerItems(data.content);
+      setIsLoaded(true);
     }
     fetchBeers();
   }, []);
-
+  if (!isLoaded) {
+    // Render nothing (or a loading indicator) while loading
+    return ( <div>Loading...</div>);
+  }
   return (
     <div>
       <div className={styles.beerCardContainer}>
@@ -40,7 +46,7 @@ function FetchBeer() {
         ))}
       </div>
       <div>
-        {/* <PageComponent/> */}
+        {<PageComponent/> }
       </div>
     </div>
   );

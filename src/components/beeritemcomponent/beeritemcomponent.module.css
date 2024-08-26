@@ -2,11 +2,11 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  background: #f9f9f9; /* Light pastel background for the card */
+  background: #141414; /* Light pastel background for the card */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 5px rgb(57, 57, 57);
   padding: 20px;
   margin: 10px;
   width: 400px;
@@ -14,15 +14,16 @@
   max-width: 350px; /* Maximum width for responsiveness */
   animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
   box-sizing: border-box; /* Ensures padding and border are included in width/height */
-  cursor: pointer;
 }
 
 /* Title styling */
 .title {
+  text-align: center;
   font-size: 1.8rem;
   color: #6c5b7b; /* Pastel purple */
   margin-bottom: 10px;
   animation: slideInFromTop 0.5s ease-in-out;
+  text-transform: uppercase;
 }
 
 /* Brewery styling */
@@ -64,18 +65,11 @@
   color: #d3c6e3; /* Pastel lavender */
   animation: slideInFromBottom 0.5s ease-in-out;
 }
-p {
-  /* outline-color: black; */
-  /* outline: auto; */
-}
-
-h3 {
-  /* outline: auto; */
-}
 
 .beerInformation {
+  width: 100%;
   /* outline: auto; */
-  padding: 10px;
+  padding: 5px 20px;
   text-align: left;
 }
 

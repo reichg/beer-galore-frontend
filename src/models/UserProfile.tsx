@@ -1,4 +1,4 @@
-import BeerItem from "./BeerItem";
+import BeerItemPage from "./BeerItemPage";
 
 interface UserProfile {
   userId: number;
@@ -9,6 +9,6 @@ interface UserProfile {
   phone: string;
   age: number;
   roles: string[];
-  triedBeers: BeerItem[];
+  triedBeers: BeerItemPage;
 }
 export default UserProfile;

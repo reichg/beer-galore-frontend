@@ -7,9 +7,10 @@ import LandingPageComponent from "./components/landingpagecomponent/LandingPageC
 import ProfileComponent from "./components/profilecomponent/ProfileComponent";
 import { useState } from "react";
 import RegistrationComponent from "./components/registrationcomponent/RegistrationComponent";
+import AddBeerComponent from "./components/addbeercomponent/AddBeerComponent";
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(localStorage.getItem("user") ? true: false);
   return (
     <div>
       <NavbarComponent
@@ -25,6 +26,7 @@ function App() {
         />
         <Route path="/fetchBeer" element={<FetchBeerComponent />} />
         <Route path="/profile" element={<ProfileComponent />} />
+        <Route path="/addBeer" element={<AddBeerComponent />} />
       </Routes>
     </div>
   );

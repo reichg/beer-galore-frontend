@@ -1,78 +1,85 @@
 /* Container for the form */
 .formContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f0f4f8;
-    animation: fadeIn 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling for the form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  margin: 30px;
+  width: 500px;
+  height: 600px;
+  max-width: 700px;
+  max-height: 600px;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 7px 4px rgb(57, 57, 57);
+  animation: slideUp 1s ease-in-out;
+}
+
+.registerTitle {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #515151;
+}
+
+input {
+  margin-bottom: 15px;
+  width: 70%;
+}
+/* Styling for input fields */
+.input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: -2px 0px 8px 0.5px rgb(57, 57, 57);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  color: #a3a3a3;
+  background: linear-gradient(45deg, #000000, #151515);
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Styling for the submit button */
+.registerButton {
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* Styling for the form */
-  .form {
-    display: grid;
-    gap: 15px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    animation: slideUp 0.5s ease-in-out;
+  to {
+    opacity: 1;
   }
-  
-  /* Styling for input fields */
-  .input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
   }
-  
-  .input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
-  /* Styling for the submit button */
-  .submitButton {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  .submitButton:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-  }
-  
-  .submitButton:active {
-    background-color: #004494;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideUp {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
+}
