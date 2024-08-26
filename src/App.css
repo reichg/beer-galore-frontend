@@ -1,4 +1,10 @@
-body{
-    margin: 0;
-    background-color: black;
+body {
+  margin: 0;
+  background-color: black;
+  background-image: url("./assets/images/casks.jpg");
+  background-size: cover;
+}
+
+.appStyle {
+    background-color: rgba(0, 0, 0, 0.908);
 }

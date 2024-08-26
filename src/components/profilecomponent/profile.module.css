@@ -1,4 +1,8 @@
 /* Card container */
+.profilePagecontainer {
+  padding-top: 120px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -6,8 +10,8 @@
   background: #141414; /* Light pastel background for the card */
   border-radius: 12px;
   box-shadow: 3px 3px 5px rgb(57, 57, 57);
-  padding: 20px;
-  margin: 120px 20px;
+  padding: 20px 20px;
+  margin: 0px 20px;
   animation: fadeIn 1s ease-in-out, scaleUp 0.5s ease-in-out;
   box-sizing: border-box; /* Ensures padding and border are included in width/height */
   /* outline: auto; */

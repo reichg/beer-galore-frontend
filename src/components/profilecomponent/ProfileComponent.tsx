@@ -45,7 +45,7 @@ function ProfileComponent() {
     return ( <div>Loading...</div>);
   }
   return (
-    <div>
+    <div className={styles.profilePagecontainer}>
       <div className={styles.card}>
         <span className={styles.username}>Hello, {userProfile?.username}!</span>
         <div className={styles.item}>

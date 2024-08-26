@@ -12,7 +12,7 @@ import AddBeerComponent from "./components/addbeercomponent/AddBeerComponent";
 function App() {
   const [authenticated, setAuthenticated] = useState(localStorage.getItem("user") ? true: false);
   return (
-    <div>
+    <div className="appStyle">
       <NavbarComponent
         authenticated={authenticated}
         setAuthenticated={setAuthenticated}
