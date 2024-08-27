@@ -12,18 +12,21 @@ function ProfileComponent() {
   const navigate = useNavigate();
   useEffect(() => {
     async function fetchUserProfile() {
-      // const TOKEN = await getToken();
       try {
         const user: User = await JSON.parse(
           localStorage.getItem("user") || "{}"
         );
         const URL = `http://localhost:8080/api/user/${user.userId}/home`;
+
+        console.log(`url: ${URL}`);
+        
         // response from API
         const res = await fetch(`${URL}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
         });
+        
         //   get structure from the response (json)
         const data = await res.json();
         console.log(data);

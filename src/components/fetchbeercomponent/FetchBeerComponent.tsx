@@ -16,7 +16,6 @@ function FetchBeer() {
     async function fetchBeers() {
       // const TOKEN = await getToken();
       const user: User = JSON.parse(localStorage.getItem("user") || "{}");
-      console.log(user);
 
       // response from API
       const res = await fetch(`${URL}?`, {

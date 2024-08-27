@@ -1,6 +1,7 @@
 /* Card container */
 .profilePagecontainer {
   padding-top: 120px;
+  min-height: 100vh;
 }
 
 .card {
