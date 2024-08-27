@@ -11,9 +11,17 @@ Assuming you have node installed.
 
 # DEMO
 
+### Register and Login
+https://github.com/user-attachments/assets/63f11e5b-f9c7-4f6e-bab4-bc18d77af305
 
+<br>
 
-https://github.com/user-attachments/assets/379ae240-5733-4cba-9f5d-51a18cc62768
+### Create New Beer
+https://github.com/user-attachments/assets/f58a5c19-168c-43ea-9ac9-4302c199f9f8
 
+<br>
+
+### Add Beer To Profile
+https://github.com/user-attachments/assets/db81233b-6f90-44db-8d97-022e466cb778
 
 
