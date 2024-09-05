@@ -1,0 +1,25 @@
+.arrowContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .arrow {
+    font-size: 2rem;
+    animation: bounce 1.5s infinite;
+    cursor: pointer;
+    color: rgb(46, 215, 206);
+    font-size: 50px;
+  }
+  
+  /* Keyframes for the bounce animation */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  

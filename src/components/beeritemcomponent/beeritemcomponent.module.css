@@ -2,8 +2,9 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
   background: #141414; /* Light pastel background for the card */
   border-radius: 10px;
   box-shadow: 3px 3px 5px rgb(57, 57, 57);
@@ -71,6 +72,26 @@
   /* outline: auto; */
   padding: 5px 20px;
   text-align: left;
+}
+
+.confirmationAndButtonContainer {
+  position: relative; /* Ensure container allows absolute positioning */
+  display: inline-block;
+}
+
+.confirmationMessage {
+  position: absolute; /* Positioning message absolutely within the container */
+  top: 100%; /* Place it below the button */
+  left: 20%;
+  background-color: #000000;
+  color: #0b6c25;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 2px 1px rgb(57, 57, 57);
+  white-space: nowrap; /* Prevents the message from wrapping */
+  z-index: 1; /* Ensure the message appears on top */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* Animations */

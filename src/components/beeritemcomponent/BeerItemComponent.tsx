@@ -7,13 +7,18 @@ import ButtonComponent from "../globalbuttons/ButtonComponent";
 
 interface BeerItemComponentProps {
   beerItem: BeerItem;
+  showTriedBeerButton: boolean;
 }
 function getUser() {
   return JSON.parse(localStorage.getItem("user") || "{}");
 }
-function BeerItemComponent({ beerItem }: BeerItemComponentProps) {
+function BeerItemComponent({
+  beerItem,
+  showTriedBeerButton = true,
+}: BeerItemComponentProps) {
   const [rating, setRating] = useState(0);
   const user: User = getUser();
+  const [showConfirmation, setShowConfirmation] = useState(false);
 
   // const handleRatingChange = (newRating: number) => {
   //   setRating(newRating);
@@ -41,6 +46,10 @@ function BeerItemComponent({ beerItem }: BeerItemComponentProps) {
       // Parse the JSON data
       const data = await response.json();
       console.log(data);
+      setShowConfirmation(true);
+
+      // Hide the confirmation message after 3 seconds (optional)
+      setTimeout(() => setShowConfirmation(false), 3000);
 
       console.log(data);
     } catch (error) {
@@ -57,13 +66,19 @@ function BeerItemComponent({ beerItem }: BeerItemComponentProps) {
         <p className={styles.ibu}>IBU: {beerItem.ibu}</p>
         <p className={styles.type}>Type: {beerItem.type}</p>
       </div>
-      <div className={styles.tryBeerButton}>
-        <ButtonComponent
-          onClickFunction={handleTryBeerClick}
-          text="Tried This Beer"
-        />
-        {/* <StarRating rating={rating} onRatingChange={handleRatingChange} /> */}
-      </div>
+
+      {showTriedBeerButton ? (<div className={styles.confirmationAndButtonContainer}>
+        {showConfirmation && (
+          <p className={styles.confirmationMessage}>Beer Added To Profile!</p>
+        )}
+        {showTriedBeerButton ? (
+          <ButtonComponent
+            onClickFunction={handleTryBeerClick}
+            text="Tried This Beer"
+          />
+        ) : undefined}
+      </div>) : undefined}
+      
     </div>
   );
 }

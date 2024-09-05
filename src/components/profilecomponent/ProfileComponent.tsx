@@ -5,11 +5,13 @@ import styles from "./profile.module.css";
 import User from "../../models/User";
 import ButtonComponent from "../globalbuttons/ButtonComponent";
 import { useNavigate } from "react-router-dom";
+import AnimatedDownArrow from "../downarrowcomponent/AnimatedDownArrowComponent";
 
 function ProfileComponent() {
   const [userProfile, setUserProfile] = useState<UserProfile>();
   const [isLoaded, setIsLoaded] = useState(false);
   const navigate = useNavigate();
+  const showTriedBeerButton = false;
   useEffect(() => {
     async function fetchUserProfile() {
       try {
@@ -19,14 +21,14 @@ function ProfileComponent() {
         const URL = `http://localhost:8080/api/user/${user.userId}/home`;
 
         console.log(`url: ${URL}`);
-        
+
         // response from API
         const res = await fetch(`${URL}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
         });
-        
+
         //   get structure from the response (json)
         const data = await res.json();
         console.log(data);
@@ -37,7 +39,6 @@ function ProfileComponent() {
       }
     }
     fetchUserProfile();
-
   }, []);
 
   const handleSeeBeers = () => {
@@ -45,7 +46,7 @@ function ProfileComponent() {
   };
   if (!isLoaded) {
     // Render nothing (or a loading indicator) while loading
-    return ( <div>Loading...</div>);
+    return <div>Loading...</div>;
   }
   return (
     <div className={styles.profilePagecontainer}>
@@ -78,16 +79,25 @@ function ProfileComponent() {
       </div>
       <div>
         <div className={styles.triedBeersTitleContainer}>
+          <span>
+            <AnimatedDownArrow />
+          </span>
           <span className={styles.beerEmoji}>🍺</span>
           <span className={styles.triedBeersTitleText}>Tried Beers</span>
           <span className={styles.beerEmoji}>🍺</span>
+          <span>
+            <AnimatedDownArrow />
+          </span>
         </div>
 
         {userProfile?.triedBeers ? (
           <div className={styles.beerItemContainer}>
             {userProfile?.triedBeers?.content.map((triedBeer) => (
               <div key={triedBeer.beerItemId}>
-                <BeerItemComponent beerItem={triedBeer} />
+                <BeerItemComponent
+                  beerItem={triedBeer}
+                  showTriedBeerButton={showTriedBeerButton}
+                />
               </div>
             ))}
           </div>

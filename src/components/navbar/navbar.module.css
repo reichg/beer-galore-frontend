@@ -25,6 +25,20 @@
   animation: rainbow 4s linear infinite;
 }
 
+.navbarLeftItems {
+  display: flex;
+  gap: 25px;
+  /* outline: auto; */
+  padding: 5px 15px;
+}
+
+.navbarRightItems {
+  display: flex;
+  gap: 25px;
+  /* outline: auto; */
+  padding: 5px 15px;
+}
+
 @keyframes rainbow {
   0% { background-position: 0% 100%; }
   50% { background-position: 100% 100%; }
